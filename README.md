@@ -28,13 +28,6 @@ source env/bin/activate  # Windows: env\Scripts\activate
 pip install -r requirements.txt
 ```
 
-或单独安装：
-```bash
-pip install eth-account
-```
-
-将脚本保存为 `generate_wallets.py`（若已存在可忽略）。
-
 
 
 ### 使用
@@ -96,4 +89,5 @@ pip install -r requirements.txt
 
 
 ### 免责声明
+
 本工具仅用于学习与测试。请自行承担使用风险并遵守当地法律法规。 
