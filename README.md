@@ -23,6 +23,7 @@ source env/bin/activate  # Windows: env\Scripts\activate
 ```
 
 
+
 ### 安装
 ```bash
 pip install -r requirements.txt
@@ -47,17 +48,22 @@ python generate_wallets.py --out wallets.csv
 # 或
 python generate_wallets.py -o "C:\Users\blues\Documents\wallets.csv"
 ```
-- 同时指定：
+- 生成 24 词助记词：
 ```bash
-python generate_wallets.py -n 50 -o wallets_50.csv
+python generate_wallets.py -n 10 --words 24 -o wallets_24.csv
 ```
+
+### 参数
+- `--count, -n`: 生成钱包数量（默认 10）
+- `--out, -o`: 输出 CSV 文件路径（默认 `wallets_YYYYMMDD_HHMMSS.csv`）
+- `--words`: 助记词词数，`12` 或 `24`（默认 12）
 
 ### 输出说明
 - 编码：`utf-8-sig`
 - 字段：
   - `index`: 序号（从 1 开始）
   - `address`: 0x 开头的 EVM 地址
-  - `mnemonic`: BIP39 助记词（默认 12 词）
+  - `mnemonic`: BIP39 助记词（12 或 24 词）
 - 示例：
 ```csv
 index,address,mnemonic
@@ -75,9 +81,12 @@ index,address,mnemonic
 - 建议分离保存：地址可公开，助记词严格保密。
 
 ### 常见问题
-- 生成 24 词助记词：将脚本中 `strength=128` 改为 `strength=256`。
-- 导入到钱包（如 MetaMask）：选择“从助记词导入”，粘贴助记词。
-- CSV 乱码：Excel 直接打开或选择 UTF-8（脚本已写入 BOM）。
+- 如何生成 24 词助记词？
+  - 运行时添加参数：`--words 24`
+- 导入到钱包（如 MetaMask）：
+  - 选择“从助记词导入”，粘贴助记词。
+- CSV 乱码：
+  - Excel 直接打开或选择 UTF-8（脚本已写入 BOM）。
 
 ### 故障排查
 - 找不到依赖：
@@ -89,5 +98,4 @@ pip install -r requirements.txt
 
 
 ### 免责声明
-
 本工具仅用于学习与测试。请自行承担使用风险并遵守当地法律法规。 
