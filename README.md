@@ -48,15 +48,15 @@ python generate_wallets.py --out wallets.csv
 # 或
 python generate_wallets.py -o "C:\Users\blues\Documents\wallets.csv"
 ```
-- 生成 24 词助记词：
+- 生成 12 词助记词：
 ```bash
-python generate_wallets.py -n 10 --words 24 -o wallets_24.csv
+python generate_wallets.py -n 10 --words 12 -o wallets_24.csv
 ```
 
 ### 参数
 - `--count, -n`: 生成钱包数量（默认 10）
 - `--out, -o`: 输出 CSV 文件路径（默认 `wallets_YYYYMMDD_HHMMSS.csv`）
-- `--words`: 助记词词数，`12` 或 `24`（默认 12）
+- `--words`: 助记词词数，`12` 或 `24`（默认 24）
 
 ### 输出说明
 - 编码：`utf-8-sig`
@@ -81,8 +81,8 @@ index,address,mnemonic
 - 建议分离保存：地址可公开，助记词严格保密。
 
 ### 常见问题
-- 如何生成 24 词助记词？
-  - 运行时添加参数：`--words 24`
+- 如何生成 12 词助记词？
+  - 运行时添加参数：`--words 12`
 - 导入到钱包（如 MetaMask）：
   - 选择“从助记词导入”，粘贴助记词。
 - CSV 乱码：
@@ -99,3 +99,4 @@ pip install -r requirements.txt
 
 ### 免责声明
 本工具仅用于学习与测试。请自行承担使用风险并遵守当地法律法规。 
+
