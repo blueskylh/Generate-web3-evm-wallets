@@ -16,7 +16,7 @@ def main():
     parser = argparse.ArgumentParser(description="批量生成 Web3 EVM 钱包（地址 + 助记词）并保存到 CSV。")
     parser.add_argument("--count", "-n", type=int, default=10, help="生成钱包数量（默认: 10）")
     parser.add_argument("--out", "-o", type=str, default=None, help="输出 CSV 文件路径（默认: wallets_时间戳.csv）")
-    parser.add_argument("--words", type=int, choices=[12, 24], default=12, help="助记词词数（12 或 24，默认: 24）")
+    parser.add_argument("--words", type=int, choices=[12, 24], default=24, help="助记词词数（12 或 24，默认: 24）")
     args = parser.parse_args()
 
     count = max(1, args.count)
@@ -42,4 +42,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
